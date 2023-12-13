@@ -82,6 +82,8 @@ INSERT INTO `sec_permission` VALUES (1072806379384868864, 1072806379342925824, '
 -- ----------------------------
 DROP TABLE IF EXISTS `sec_user_role`;
 CREATE TABLE `sec_user_role`  (
+                                  id            bigint auto_increment comment 'id'
+                                      primary key,
                                   `user_id` bigint NOT NULL COMMENT '用户主键',
                                   `role_id` bigint NOT NULL COMMENT '角色主键',
                                   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
@@ -93,14 +95,16 @@ CREATE TABLE `sec_user_role`  (
 -- ----------------------------
 -- Records of sec_user_role
 -- ----------------------------
-INSERT INTO `sec_user_role` VALUES (1072806377661009920, 1072806379208708096, '2023-12-13 09:37:22', '2023-12-13 09:37:22', 0);
-INSERT INTO `sec_user_role` VALUES (1072806378780889088, 1072806379238068224, '2023-12-13 09:37:22', '2023-12-13 09:37:22', 0);
+INSERT INTO `sec_user_role` VALUES (default,1072806377661009920, 1072806379208708096, '2023-12-13 09:37:22', '2023-12-13 09:37:22', 0);
+INSERT INTO `sec_user_role` VALUES (default,1072806378780889088, 1072806379238068224, '2023-12-13 09:37:22', '2023-12-13 09:37:22', 0);
 
 -- ----------------------------
 -- Table structure for sec_role_permission
 -- ----------------------------
 DROP TABLE IF EXISTS `sec_role_permission`;
 CREATE TABLE `sec_role_permission`  (
+                                        id            bigint auto_increment comment 'id'
+                                            primary key,
                                         `role_id` bigint NOT NULL COMMENT '角色主键',
                                         `permission_id` bigint NOT NULL COMMENT '权限主键',
                                         `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
@@ -112,11 +116,11 @@ CREATE TABLE `sec_role_permission`  (
 -- ----------------------------
 -- Records of sec_role_permission
 -- ----------------------------
-INSERT INTO `sec_role_permission` VALUES (1072806379208708096, 1072806379288399872, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
-INSERT INTO `sec_role_permission` VALUES (1072806379208708096, 1072806379313565696, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
-INSERT INTO `sec_role_permission` VALUES (1072806379208708096, 1072806379330342912, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
-INSERT INTO `sec_role_permission` VALUES (1072806379208708096, 1072806379342925824, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
-INSERT INTO `sec_role_permission` VALUES (1072806379208708096, 1072806379363897344, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
-INSERT INTO `sec_role_permission` VALUES (1072806379208708096, 1072806379384868864, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
-INSERT INTO `sec_role_permission` VALUES (1072806379238068224, 1072806379288399872, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
-INSERT INTO `sec_role_permission` VALUES (1072806379238068224, 1072806379313565696, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
+INSERT INTO `sec_role_permission` VALUES (default,1072806379208708096, 1072806379288399872, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
+INSERT INTO `sec_role_permission` VALUES (default,1072806379208708096, 1072806379313565696, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
+INSERT INTO `sec_role_permission` VALUES (default,1072806379208708096, 1072806379330342912, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
+INSERT INTO `sec_role_permission` VALUES (default,1072806379208708096, 1072806379342925824, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
+INSERT INTO `sec_role_permission` VALUES (default,1072806379208708096, 1072806379363897344, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
+INSERT INTO `sec_role_permission` VALUES (default,1072806379208708096, 1072806379384868864, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
+INSERT INTO `sec_role_permission` VALUES (default,1072806379238068224, 1072806379288399872, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
+INSERT INTO `sec_role_permission` VALUES (default,1072806379238068224, 1072806379313565696, '2023-12-13 09:38:25', '2023-12-13 09:38:25', 0);
