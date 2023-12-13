@@ -24,7 +24,7 @@ import javax.validation.Valid;
 
 /**
  * <p>
- * 认证 Controller，包括用户注册，用户登录请求
+ * 认证 Controller，包括用户登录、登出请求
  * </p>
  */
 @Slf4j
@@ -43,11 +43,16 @@ public class AuthController {
      */
     @PostMapping("/login")
     public ApiResponse login(@Valid @RequestBody LoginRequest loginRequest) {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsernameOrEmailOrPhone(), loginRequest.getPassword()));
-
+        // 根据用户名和密码生成未认证的 authenticationToken
+        UsernamePasswordAuthenticationToken authenticationToken =
+                new UsernamePasswordAuthenticationToken(loginRequest.getUsernameOrEmailOrPhone(), loginRequest.getPassword());
+        // 把未认证的 token 交给 manage 认证；认证成功生成认证信息
+        Authentication authentication = authenticationManager.authenticate(authenticationToken);
+        // 将已经认证的authentication保存到SecurityContext中
         SecurityContextHolder.getContext().setAuthentication(authentication);
-
+        // 创建jwt并保存到redis中
         String jwt = jwtUtil.createJWT(authentication, loginRequest.getRememberMe());
+        // jwt 返回前端作为用户的凭证
         return ApiResponse.ofSuccess(new JwtResponse(jwt));
     }
 

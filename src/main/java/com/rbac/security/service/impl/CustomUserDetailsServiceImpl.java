@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
  * </p>
  */
 @Service
-public class CustomUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserMapper userMapper;
 

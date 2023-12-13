@@ -1,6 +1,6 @@
 package com.rbac.security.config;
 
-import com.rbac.security.service.impl.CustomUserDetailsService;
+import com.rbac.security.service.impl.CustomUserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -21,12 +21,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  * <p>
  * Security 配置
  * </p>
- *
-
- 07 16:46
  */
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
 @EnableConfigurationProperties(CustomConfig.class)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
@@ -36,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private AccessDeniedHandler accessDeniedHandler;
 
     @Autowired
-    private CustomUserDetailsService customUserDetailsService;
+    private CustomUserDetailsServiceImpl customUserDetailsService;
 
     @Autowired
     private JwtAuthenticationFilter jwtAuthenticationFilter;

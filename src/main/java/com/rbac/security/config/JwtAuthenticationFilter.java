@@ -6,7 +6,7 @@ import cn.hutool.core.util.StrUtil;
 import com.google.common.collect.Sets;
 import com.rbac.security.common.Status;
 import com.rbac.security.exception.SecurityException;
-import com.rbac.security.service.impl.CustomUserDetailsService;
+import com.rbac.security.service.impl.CustomUserDetailsServiceImpl;
 import com.rbac.security.util.JwtUtil;
 import com.rbac.security.util.ResponseUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -31,13 +31,14 @@ import java.util.Set;
 /**
  * <p>
  * Jwt 认证过滤器
+ * OncePerRequestFilter 同一次请求只会执行一次
  * </p>
  */
 @Component
 @Slf4j
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Autowired
-    private CustomUserDetailsService customUserDetailsService;
+    private CustomUserDetailsServiceImpl customUserDetailsService;
 
     @Autowired
     private JwtUtil jwtUtil;

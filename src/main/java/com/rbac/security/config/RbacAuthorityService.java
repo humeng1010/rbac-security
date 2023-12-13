@@ -31,6 +31,8 @@ import java.util.stream.Collectors;
 /**
  * <p>
  * 动态路由认证
+ * 主要方法：hasPermission
+ * 用于securityConfig中的anyRequest都要执行，查看是否授权
  * </p>
  */
 @Component
@@ -44,7 +46,15 @@ public class RbacAuthorityService {
     @Autowired
     private RequestMappingHandlerMapping mapping;
 
+    /**
+     * 判断是否有权限
+     * 在securityConfig中调用
+     * @param request req
+     * @param authentication 认证信息
+     * @return
+     */
     public boolean hasPermission(HttpServletRequest request, Authentication authentication) {
+        // 检查请求是否存在
         checkRequest(request);
 
         Object userInfo = authentication.getPrincipal();
@@ -58,7 +68,7 @@ public class RbacAuthorityService {
             List<Long> roleIds = roles.stream().map(Role::getId).collect(Collectors.toList());
             List<Permission> permissions = permissionMapper.selectByRoleIdList(roleIds);
 
-            //获取资源，前后端分离，所以过滤页面权限，只保留按钮权限
+            // 获取资源，前后端分离，所以过滤页面权限，只保留按钮权限
             List<Permission> btnPerms = permissions.stream()
                 // 过滤页面权限
                 .filter(permission -> Objects.equals(permission.getType(), Consts.BUTTON))
@@ -105,7 +115,7 @@ public class RbacAuthorityService {
                 }
             }
         }
-
+        // mapping遍历完了还没有对应的请求，404
         throw new SecurityException(Status.REQUEST_NOT_FOUND);
     }
 
