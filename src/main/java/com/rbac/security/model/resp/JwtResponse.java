@@ -1,4 +1,4 @@
-package com.rbac.security.vo;
+package com.rbac.security.model.resp;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

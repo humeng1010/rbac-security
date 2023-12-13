@@ -1,4 +1,4 @@
-package com.rbac.security.payload;
+package com.rbac.security.model.req;
 
 import lombok.Data;
 
@@ -8,9 +8,6 @@ import javax.validation.constraints.NotBlank;
  * <p>
  * 登录请求参数
  * </p>
- *
-
- 10 15:52
  */
 @Data
 public class LoginRequest {

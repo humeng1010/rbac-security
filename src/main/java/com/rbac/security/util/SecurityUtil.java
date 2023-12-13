@@ -3,7 +3,7 @@ package com.rbac.security.util;
 import cn.hutool.core.util.ObjectUtil;
 
 import com.rbac.security.common.Consts;
-import com.rbac.security.vo.UserPrincipal;
+import com.rbac.security.model.vo.UserPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 

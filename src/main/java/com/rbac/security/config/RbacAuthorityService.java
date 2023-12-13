@@ -10,7 +10,7 @@ import com.rbac.security.entity.Role;
 import com.rbac.security.exception.SecurityException;
 import com.rbac.security.mapper.PermissionMapper;
 import com.rbac.security.mapper.RoleMapper;
-import com.rbac.security.vo.UserPrincipal;
+import com.rbac.security.model.vo.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -15,6 +15,11 @@ import lombok.Data;
 @Data
 public class UserRole implements Serializable {
     /**
+     * id
+     */
+    @TableId(type = IdType.AUTO)
+    private Long id;
+    /**
      * 用户主键
      */
     private Long userId;

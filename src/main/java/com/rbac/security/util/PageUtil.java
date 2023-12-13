@@ -4,7 +4,7 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.ReflectUtil;
 
 import com.rbac.security.common.Consts;
-import com.rbac.security.payload.PageCondition;
+import com.rbac.security.model.req.PageCondition;
 import org.springframework.data.domain.PageRequest;
 
 /**

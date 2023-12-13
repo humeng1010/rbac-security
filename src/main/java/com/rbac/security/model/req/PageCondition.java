@@ -1,4 +1,4 @@
-package com.rbac.security.payload;
+package com.rbac.security.model.req;
 
 import lombok.Data;
 
@@ -6,9 +6,6 @@ import lombok.Data;
  * <p>
  * 分页请求参数
  * </p>
- *
-
- 12 18:05
  */
 @Data
 public class PageCondition {

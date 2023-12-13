@@ -15,6 +15,11 @@ import lombok.Data;
 @Data
 public class RolePermission implements Serializable {
     /**
+     * id
+     */
+    @TableId(type = IdType.AUTO)
+    private Long id;
+    /**
      * 角色主键
      */
     private Long roleId;

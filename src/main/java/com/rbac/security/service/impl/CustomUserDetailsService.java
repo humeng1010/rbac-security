@@ -7,7 +7,7 @@ import com.rbac.security.entity.User;
 import com.rbac.security.mapper.PermissionMapper;
 import com.rbac.security.mapper.RoleMapper;
 import com.rbac.security.mapper.UserMapper;
-import com.rbac.security.vo.UserPrincipal;
+import com.rbac.security.model.vo.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

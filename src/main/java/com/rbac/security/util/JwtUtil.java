@@ -7,7 +7,7 @@ import com.rbac.security.common.Consts;
 import com.rbac.security.common.Status;
 import com.rbac.security.config.JwtConfig;
 import com.rbac.security.exception.SecurityException;
-import com.rbac.security.vo.UserPrincipal;
+import com.rbac.security.model.vo.UserPrincipal;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

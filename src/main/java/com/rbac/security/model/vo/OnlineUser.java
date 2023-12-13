@@ -1,4 +1,4 @@
-package com.rbac.security.vo;
+package com.rbac.security.model.vo;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
