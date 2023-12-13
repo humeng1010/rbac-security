@@ -13,8 +13,16 @@
             <result property="deleted" column="deleted" jdbcType="TINYINT"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
+    <sql id="BASE_COLUMN_LIST">
         id,name,description,
         create_time,update_time,deleted
     </sql>
+    <select id="selectByUserId" resultType="com.rbac.security.entity.Role">
+        select sr.*
+        from sec_role sr left join sec_user_role sur on sr.id = sur.role_id
+        where sur.deleted = 0 and sr.deleted = 0
+        <if test="id!=null">
+            and sur.user_id = #{id}
+        </if>
+    </select>
 </mapper>

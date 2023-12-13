@@ -25,4 +25,29 @@
         birthday,sex,status,
         create_time,update_time,deleted
     </sql>
+    <select id="findByUsernameOrEmailOrPhone" resultType="com.rbac.security.entity.User">
+        select *
+        from sec_user
+        where deleted = 0
+        <if test=" username != null and username != '' ">
+            and username = #{username}
+        </if>
+        <if test=" email != null and email != '' ">
+            or email = #{email}
+        </if>
+        <if test=" phone != null and phone != '' ">
+            or phone = #{phone}
+        </if>
+    </select>
+    <select id="findByUsernameIn" resultType="com.rbac.security.entity.User">
+        select *
+        from sec_user
+        where deleted = 0
+        <if test="usernameList!=null and usernameList.size>0">
+            and username in
+            <foreach collection="usernameList" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </select>
 </mapper>

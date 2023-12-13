@@ -2,6 +2,9 @@ package com.rbac.security.mapper;
 
 import com.rbac.security.entity.Permission;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
 * @author redyo
@@ -11,6 +14,12 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 */
 public interface PermissionMapper extends BaseMapper<Permission> {
 
+    /**
+     * 根据角色id查询权限
+     * @param roleIds
+     * @return
+     */
+    List<Permission> selectByRoleIdList(@Param("roleIds") List<Long> roleIds);
 }
 
 

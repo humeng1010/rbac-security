@@ -1,10 +1,9 @@
 package com.rbac.security.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 import lombok.Data;
 
@@ -18,28 +17,27 @@ public class RolePermission implements Serializable {
     /**
      * 角色主键
      */
-    @TableId
     private Long roleId;
 
     /**
      * 权限主键
      */
-    @TableId
     private Long permissionId;
 
     /**
      * 创建时间
      */
-    private Date createTime;
+    private LocalDateTime createTime;
 
     /**
      * 更新时间
      */
-    private Date updateTime;
+    private LocalDateTime updateTime;
 
     /**
      * 
      */
+    @TableLogic
     private Integer deleted;
 
     @TableField(exist = false)

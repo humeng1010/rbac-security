@@ -1,13 +1,16 @@
 package com.rbac.security;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootTest
-class RbacSecurityApplicationTests {
+public class RbacSecurityApplicationTests {
 
     @Test
-    void contextLoads() {
+    public void contextLoads() {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        System.out.println(encoder.encode("123456"));
     }
 
 }

@@ -24,4 +24,16 @@
         permission,sort,create_time,
         update_time,deleted
     </sql>
+    <select id="selectByRoleIdList" resultType="com.rbac.security.entity.Permission">
+        select
+        sp.*
+        from sec_permission sp left join sec_role_permission srp on sp.id = srp.permission_id
+        where sp.deleted = 0 and srp.deleted = 0
+        <if test="roleIds!=null and roleIds.size>0">
+            and srp.role_id in
+            <foreach collection="roleIds" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </select>
 </mapper>

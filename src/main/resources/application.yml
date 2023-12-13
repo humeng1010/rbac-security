@@ -11,13 +11,13 @@ spring:
     password: 123456
     druid:
       # 初始化连接数大小
-      initial-size: 100
+#      initial-size: 100
       # 最大连接数
-      max-active: 10000
+#      max-active: 10000
       # 连接超时时间
       max-wait: 60000
       # 最小连接数
-      min-idle: 100
+#      min-idle: 100
       # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
       time-between-eviction-runs-millis: 60000
       # 配置一个连接在池中最小生存的时间，单位是毫秒
