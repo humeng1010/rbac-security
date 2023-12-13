@@ -30,7 +30,7 @@ import java.util.Set;
 
 /**
  * <p>
- * Jwt 认证过滤器
+ * Jwt 认证过滤器（权限授权）
  * OncePerRequestFilter 同一次请求只会执行一次
  * </p>
  */
