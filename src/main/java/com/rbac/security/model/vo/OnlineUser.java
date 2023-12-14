@@ -2,9 +2,12 @@ package com.rbac.security.model.vo;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.rbac.security.common.Consts;
 import com.rbac.security.entity.User;
 import lombok.Data;
+
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -42,7 +45,8 @@ public class OnlineUser {
     /**
      * 生日
      */
-    private Long birthday;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime birthday;
 
     /**
      * 性别，男-1，女-2
