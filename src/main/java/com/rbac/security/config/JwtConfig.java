@@ -12,7 +12,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 public class JwtConfig {
     /**
-     * jwt 加密 key，默认值：p@88w0rd.
+     * jwt 加密 key，默认值：p@88w0rd
      */
     private String key = "p@88w0rd";
 
