@@ -58,6 +58,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         if (StrUtil.isNotBlank(jwt)) {
             try {
+                // 解析jwt如果jwt设置的expire过期了会解析失败抛出异常，捕获异常抛出自定义异常
                 String username = jwtUtil.getUsernameFromJWT(jwt);
 
                 UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
